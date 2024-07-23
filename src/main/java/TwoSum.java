@@ -1,11 +1,13 @@
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
-public class TwoNumSum {
+public class TwoSum {
 
     public static void main(String[] args) {
-        int [] nums = new int [] {2,5,5,11};
-        int target = 10;
-        int [] result = twoSum(nums, target);
+        int [] nums = new int [] {3,2,4};
+        int target = 6;
+        int [] result = twoSum1(nums, target);
         System.out.println(result[0] + ":" + result[1]);
     }
 
@@ -54,5 +56,27 @@ public class TwoNumSum {
         } else {
             return middleNum;
         }
+    }
+
+    public static int[] twoSum1(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<Integer,Integer>();
+
+        for (int i = 0; i < nums.length; i++) {
+            int num1 = nums[i];
+            int num2 = target - num1;
+
+            if (!map.containsKey(num1)) {
+                map.put(num1, i);
+            }
+
+            if (map.containsKey(num2)) {
+                int index = map.get(num2);
+                if (index != i) {
+                    return new int [] {i, index};
+                }
+            }
+        }
+
+        return null;
     }
 }
