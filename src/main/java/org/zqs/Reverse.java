@@ -1,3 +1,5 @@
+package org.zqs;
+
 import org.omg.CORBA.INTERNAL;
 
 public class Reverse {

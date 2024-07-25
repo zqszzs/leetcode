@@ -1,3 +1,5 @@
+package org.zqs;
+
 public class Atoi {
 
 //    public static void main(String[] args) {
