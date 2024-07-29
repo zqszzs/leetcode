@@ -2,6 +2,9 @@ package org.zqs;
 
 import org.zqs.common.ListNode;
 
+import java.util.Comparator;
+import java.util.PriorityQueue;
+
 /**
  * leetcode 第21题
  */
@@ -26,7 +29,7 @@ public class MergeKLists23 {
             lists[i] = first;
         }
 
-        ListNode listNode = mergeKLists(lists);
+        ListNode listNode = mergeKLists3(lists);
         System.out.println(listNode);
     }
 
@@ -67,5 +70,59 @@ public class MergeKLists23 {
         }
 
         return result.next;
+    }
+
+
+    /**
+     * 方式2 优先级队列
+     */
+
+    public static ListNode mergeKLists2(ListNode[] lists) {
+        PriorityQueue<ListNode> priorityQueue = new PriorityQueue((Comparator<ListNode>) (o1, o2) -> o1.val - o2.val);
+
+        for (ListNode listNode : lists) {
+            if (listNode == null) {
+                continue;
+            }
+            priorityQueue.add(listNode);
+        }
+
+
+        ListNode dummy = new ListNode(0);
+        ListNode current =  dummy;
+
+        while (!priorityQueue.isEmpty()) {
+            ListNode listNode = priorityQueue.poll();
+            current.next = listNode;
+            current = current.next;
+            ListNode next = listNode.next;
+            if (next != null) {
+                priorityQueue.add(next);
+            }
+
+        }
+
+        return dummy.next;
+    }
+
+    /**
+     * 方式3 分治法
+     */
+
+    public static ListNode mergeKLists3(ListNode[] lists) {
+        return merge(lists, 0, lists.length - 1);
+    }
+
+    public static ListNode merge(ListNode[] lists, int l, int r) {
+        if (l == r) {
+            return lists[l];
+        }
+        if (l > r) {
+            return null;
+        }
+        int mid = (r + l) >> 1;
+
+
+        return mergeKLists(merge(lists, l, mid), merge(lists, mid + 1, r));
     }
 }
