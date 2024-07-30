@@ -18,7 +18,7 @@ public class DetectCycle142 {
 
         ListNode listNode = buildDetectCycleNode(params, 3);
 
-        ListNode reuslt = detectCycle(listNode);
+        ListNode reuslt = detectCycle2(listNode);
 
         System.out.println(reuslt != null ? reuslt.val : "null");
 
@@ -68,6 +68,29 @@ public class DetectCycle142 {
      * @return
      */
     public static ListNode detectCycle2(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast != null) {
+            if (fast.next == null || fast.next.next == null) {
+                return null;
+            }
+
+            slow = slow.next;
+            fast = fast.next.next;
+
+            if (slow == fast) {
+                ListNode lptr = head;
+                while (lptr != slow) {
+                    lptr = lptr.next;
+                    slow = slow.next;
+                }
+
+                return lptr;
+            }
+
+        }
+
         return null;
     }
 
