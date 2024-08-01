@@ -32,6 +32,9 @@ public class ReorderList143 {
      * 1 - 5 - 2 - 3 - 4
      * 1- 5 - 2 - 4 - 3
      * @param head
+     *
+     * 时间复杂度 o(n^2)
+     *
      */
     public static void reorderList(ListNode head) {
         if (head == null || head.next == null) {
