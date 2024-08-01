@@ -1,10 +1,10 @@
 package org.zqs.tree;
 
 
+import com.sun.jmx.remote.internal.ArrayQueue;
 import org.zqs.common.TreeNode;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class PreorderTraversal144 {
 
@@ -43,27 +43,21 @@ public class PreorderTraversal144 {
      */
     public List<Integer> preorderTraversal2(TreeNode root) {
         List<Integer> result = new ArrayList();
-
-        List<TreeNode> list = new ArrayList<>();
-        list.add(root);
-        while (!list.isEmpty()) {
-            List<TreeNode> child = new ArrayList<>();
-            for (TreeNode treeNode : list) {
-                if (treeNode == null) {
-                    continue;
-                }
-                result.add(treeNode.val);
-                if (treeNode.left != null) {
-                    child.add(treeNode.left);
-                }
-                if (treeNode.right != null) {
-                    child.add(treeNode.right);
-                }
-            }
-
-            list = child;
+        if (root == null) {
+            return result;
         }
-
+        Queue<TreeNode> queue = new LinkedList<>();
+        queue.add(root);
+        while (!queue.isEmpty()) {
+            TreeNode treeNode = queue.remove();
+            result.add(treeNode.val);
+            if (treeNode.left != null) {
+                queue.add(treeNode.left);
+            }
+            if (treeNode.right != null) {
+                queue.add(treeNode.right);
+            }
+        }
         return result;
     }
 }
