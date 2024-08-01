@@ -1,4 +1,4 @@
-package org.zqs;
+package org.zqs.array;
 
 /**
  * leetcode
@@ -35,7 +35,7 @@ public class Area {
 
     /**
      * 双指针
-     * 解题思路：滑动窗口
+     * 解题思路：指针低的往前移动
      * @param height
      */
     public static int maxArea2(int [] height) {

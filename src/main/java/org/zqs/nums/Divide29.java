@@ -1,4 +1,4 @@
-package org.zqs;
+package org.zqs.nums;
 
 public class Divide29 {
     public static void main(String[] args) {

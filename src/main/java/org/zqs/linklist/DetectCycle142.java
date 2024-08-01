@@ -1,4 +1,4 @@
-package org.zqs;
+package org.zqs.linklist;
 
 import org.zqs.common.ListNode;
 

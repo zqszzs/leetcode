@@ -1,4 +1,4 @@
-package org.zqs;
+package org.zqs.strings;
 
 public class StrStr28 {
     public static void main(String[] args) {

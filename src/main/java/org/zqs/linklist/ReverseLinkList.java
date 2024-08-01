@@ -1,12 +1,12 @@
-package org.zqs;
+package org.zqs.linklist;
 
 import org.zqs.common.ListNode;
 
-public class SwapPair {
+public class ReverseLinkList {
 
     public static void main(String[] args) {
 
-        int [] params = new int[]{1};
+        int [] params = new int[]{1, 2, 3, 4};
 
         ListNode first = null, pre = null;
         for (int param : params) {
@@ -19,12 +19,11 @@ public class SwapPair {
             pre = listNode;
         }
 
-        ListNode listNode = swapPairs(first);
+        ListNode listNode = reverseLinkList(first);
         System.out.println(listNode);
     }
 
-
-    public static ListNode swapPairs(ListNode head) {
+    public static ListNode reverseLinkList(ListNode head) {
         if (head == null) {
             return head;
         }
@@ -48,18 +47,6 @@ public class SwapPair {
             current = current.next;
             i++;
         }
-
-        return head;
-    }
-
-    /**
-     * 哨兵节点
-     * @param head
-     * @return
-     */
-    public static ListNode swapPairs1(ListNode head) {
-        ListNode node0 = new ListNode();
-        ListNode node1 = head;
 
         return head;
     }

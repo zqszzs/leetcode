@@ -1,4 +1,4 @@
-package org.zqs;
+package org.zqs.nums;
 
 import java.util.Arrays;
 import java.util.HashMap;

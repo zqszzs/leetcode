@@ -1,4 +1,4 @@
-package org.zqs;
+package org.zqs.strings;
 
 import java.util.ArrayList;
 import java.util.HashSet;

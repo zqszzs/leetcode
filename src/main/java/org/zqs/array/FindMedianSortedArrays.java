@@ -1,4 +1,4 @@
-package org.zqs;
+package org.zqs.array;
 
 public class FindMedianSortedArrays {
 

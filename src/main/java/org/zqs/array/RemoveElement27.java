@@ -1,4 +1,4 @@
-package org.zqs;
+package org.zqs.array;
 
 public class RemoveElement27 {
     public static void main(String[] args) {
