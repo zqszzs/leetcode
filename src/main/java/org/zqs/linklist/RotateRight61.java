@@ -131,4 +131,32 @@ public class RotateRight61 {
         return head;
     }
 
+
+    public static ListNode rotateRight4(ListNode head, int k) {
+        if (head == null || k == 0) {
+            return head;
+        }
+
+        // 求长度，将尾部节点连接头节点
+        int length = 0;
+        ListNode current = head;
+        ListNode last = head;
+        while (current != null) {
+            last = current;
+            current = current.next;
+            length++;
+        }
+        last.next = head;
+
+        // 求头部节点，断开尾部节点
+        int i = length - k % length + 1;
+        current = head;
+        while (--i > 0) {
+            last = current;
+            current = current.next;
+        }
+        last.next = null;
+        return current;
+    }
+
 }
