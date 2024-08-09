@@ -19,16 +19,15 @@ public class SearchRange34 {
 
         int left = 0;
         int right = nums.length - 1;
-        int middle = (left + right) / 2;
+        int middle = left + (right - left) / 2;
 
         int index = -1;
         while (left <= right) {
+            middle = left + (right - left) / 2;
             if (nums[middle] > target) {
                 right = middle - 1;
-                middle = (left + right) / 2;
             } else if (nums[middle] < target) {
                 left = middle + 1;
-                middle = (left + right) / 2;
             } else {
                 index = middle;
                 break;
