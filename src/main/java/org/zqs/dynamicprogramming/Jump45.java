@@ -15,8 +15,6 @@ public class Jump45 {
         if (nums == null && nums.length < 2) {
             return 0;
         }
-
-
         Map<Integer, Integer> step = new HashMap<>();
 
         int minStep = nums.length - 1;
