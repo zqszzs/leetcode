@@ -9,8 +9,13 @@ public class SortList148 {
 
     public static void main(String[] args) {
         int [] params = new int [] {-1,5,3,4,0};
-        ListNode listNode = sortList(ListNode.buildListNode(params), null);
+        ListNode listNode = sortList(ListNode.buildListNode(params));
         System.out.println(listNode);
+    }
+
+
+    public static ListNode sortList(ListNode head) {
+        return sortList(head, null);
     }
 
     public static ListNode sortList(ListNode head, ListNode tail) {
