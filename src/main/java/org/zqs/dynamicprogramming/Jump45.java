@@ -7,7 +7,7 @@ import java.util.Objects;
 public class Jump45 {
 
     public static void main(String[] args) {
-        int result = jump(new int [] {1,2,0,1});
+        int result = jump1(new int [] {2,3,0,1,4});
         System.out.println(result);
     }
 
@@ -47,5 +47,35 @@ public class Jump45 {
         return currentMinStep + 1;
     }
 
+
+
+
+    public static int jump1(int[] nums) {
+        if (nums == null || nums.length < 2) {
+            return 0;
+        }
+
+        int step = 1;
+        int nextStep = 0;
+        while (nextStep < nums.length) {
+            int num = nums[nextStep];
+
+            if (nextStep + num >= nums.length - 1) {
+                return step;
+            }
+            int tempStep = 0;
+            int nextBestValue = num;
+            for (int j = 1; j <= num; j++) {
+                if (nums[nextStep + j] + j >= nextBestValue) {
+                    nextBestValue = nums[nextStep + j] + j;
+                    tempStep = nextStep + j;
+                }
+            }
+            nextStep = tempStep;
+            step++;
+        }
+
+        return step;
+    }
 
 }
