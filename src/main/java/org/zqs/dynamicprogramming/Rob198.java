@@ -26,7 +26,7 @@ package org.zqs.dynamicprogramming;
  * 来源：力扣（LeetCode）
  * 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
  */
-public class Rob {
+public class Rob198 {
 
     public static void main(String[] args) {
         int nums []  = new int [] {6,3,10,8,2,10,3,5,10,5,3};
