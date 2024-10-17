@@ -50,21 +50,18 @@ public class DeleteMiddle2095 {
      * @return
      */
     public static ListNode deleteMiddle1(ListNode head) {
+        if (head.next == null) {
+            return null;
+        }
+
         ListNode slowPre = null;
         ListNode slow = head;
         ListNode fast = head;
 
-        while (fast.next != null) {
+        while (fast != null && fast.next != null) {
             slowPre = slow;
             slow = slow.next;
-            fast = fast.next;
-            if (fast.next != null) {
-                fast = fast.next;
-            }
-        }
-
-        if (slowPre == null) {
-            return null;
+            fast = fast.next.next;
         }
         slowPre.next = slow.next;
         return head;
