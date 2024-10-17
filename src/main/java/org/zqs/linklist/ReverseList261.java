@@ -32,7 +32,6 @@ public class ReverseList261 {
      * next-current
      *
      */
-
     public static ListNode reverseList(ListNode head) {
         if (head == null || head.next == null) {
             return head;
