@@ -10,11 +10,11 @@ public class DeleteMiddle2095 {
 
     public static void main(String[] args) {
 
-        int [] params = new int [] {1,2,3,4,5};
+        int [] params = new int [] {1};
 
         ListNode listNode = ListNode.buildListNode(params);
 
-        ListNode reuslt = deleteMiddle(listNode);
+        ListNode reuslt = deleteMiddle1(listNode);
 
         System.out.println(reuslt != null ? reuslt.val : "null");
     }
@@ -41,6 +41,32 @@ public class DeleteMiddle2095 {
             curr = curr.next;
         }
         pre.next = curr.next;
+        return head;
+    }
+
+    /**
+     * 快慢指针
+     * @param head
+     * @return
+     */
+    public static ListNode deleteMiddle1(ListNode head) {
+        ListNode slowPre = null;
+        ListNode slow = head;
+        ListNode fast = head;
+
+        while (fast.next != null) {
+            slowPre = slow;
+            slow = slow.next;
+            fast = fast.next;
+            if (fast.next != null) {
+                fast = fast.next;
+            }
+        }
+
+        if (slowPre == null) {
+            return null;
+        }
+        slowPre.next = slow.next;
         return head;
     }
 }
