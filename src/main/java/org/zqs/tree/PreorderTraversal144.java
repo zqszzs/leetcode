@@ -1,11 +1,15 @@
 package org.zqs.tree;
 
-
-import com.sun.jmx.remote.internal.ArrayQueue;
 import org.zqs.common.TreeNode;
 
 import java.util.*;
 
+/**
+ * 先序遍历
+ * 1. 根节点开始
+ * 2. 先序遍历左子树
+ * 3. 先序遍历右子树
+ **/
 public class PreorderTraversal144 {
 
     public static void main(String[] args) {

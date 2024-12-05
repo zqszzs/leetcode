@@ -9,6 +9,8 @@ import java.util.List;
 
 /**
  * 173 二叉树中序搜索迭代器
+ *
+ * 左 - 根 - 右
  */
 public class BSTIterator {
 
